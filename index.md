@@ -22,7 +22,7 @@ I usually reply within about two business days. If a result looks wrong, please 
 
 ## Before anything else
 
-**DroneMap is a planning aid.** It works from a public elevation model of the bare ground with about 30 m between samples and a vertical error that can reach several metres, more on steep slopes. **Buildings, trees, masts, wires and new earthworks are not in it.** A green map means the terrain model clears your plan by your margin, nothing more. Keep your drone in sight, keep the drone app's own warnings on, and follow the rules of the place you fly in.
+**DroneMap is a planning aid.** It works from a public elevation model of the bare ground with about 30 m between samples and a vertical error that can reach several meters, more on steep slopes. **Buildings, trees, masts, wires and new earthworks are not in it.** A green map means the terrain model clears your plan by your margin, nothing more. Keep your drone in sight, keep the drone app's own warnings on, and follow the rules of the place you fly in.
 
 ---
 
@@ -43,7 +43,7 @@ Consumer drones measure altitude from the point where they took off, not from th
 
 ### What do the four checks mean?
 
-<span class="tag danger">Terrain</span> Where the planned altitude is inside the terrain model, or closer to it than your safety margin (30 m by default). The verdict also gives the altitude that clears the whole area. The map shows the RTH line on this layer too, so you see the way home over the same colours.
+<span class="tag danger">Terrain</span> Where the planned altitude is inside the terrain model, or closer to it than your safety margin (30 m by default). The verdict also gives the altitude that clears the whole area. The map shows the RTH line on this layer too, so you see the way home over the same colors.
 
 <span class="tag caution">Safe RTH</span> Return-to-Home climbs to the RTH altitude and flies home in a straight line at that altitude. DroneMap traces that line from every point of the area and reports the lowest RTH altitude that clears terrain on all of them, with the point that drives the number and the line drawn on the map. Set your drone's RTH altitude to that value or higher.
 
@@ -61,7 +61,7 @@ A side view along one line from your takeoff: the ground, your flight altitude, 
 
 ### How do I change my area?
 
-Press and drag any corner. Drag the small handle in the middle of an edge to add a corner there. Tap a corner to select it, then **Delete corner** or **Undo** in the card. For a circle, drag its centre or the handle on its edge. The takeoff and operator pins can be dragged the same way. A tap on the map shrinks the card so you can see more of it; tap the card or its arrow to bring it back.
+Press and drag any corner. Drag the small handle in the middle of an edge to add a corner there. Tap a corner to select it, then **Delete corner** or **Undo** in the card. For a circle, drag its center or the handle on its edge. The takeoff and operator pins can be dragged the same way. A tap on the map shrinks the card so you can see more of it; tap the card or its arrow to bring it back.
 
 ### What does Save do?
 
@@ -75,7 +75,7 @@ Please send the following and I will look at it the same week:
 2. The takeoff coordinates, the altitude and RTH values you entered, and your margin.
 3. What you expected instead, and why (a topographic map, a drone log, a photo).
 
-The usual reasons are: a terrain void or smoothing in the elevation model (narrow gorges and sharp peaks can be off by tens of metres), a takeoff point placed on a slope a few metres from where you actually stood, or an imported file whose altitudes are above sea level rather than above takeoff (see the import question).
+The usual reasons are: a terrain void or smoothing in the elevation model (narrow gorges and sharp peaks can be off by tens of meters), a takeoff point placed on a slope a few meters from where you actually stood, or an imported file whose altitudes are above sea level rather than above takeoff (see the import question).
 
 ### The map says "No data" in places.
 
@@ -89,9 +89,9 @@ No. The elevation model is a bare-earth radar survey. Dense forest and large bui
 
 About 30 m between samples; absolute vertical error within 16 m for 90 % of the land, typically 5 to 10 m in open terrain and worse in narrow valleys and on steep slopes. The default 30 m safety margin exists for this reason. You can change the margin in Settings; lowering it is at your own risk.
 
-### Metres or feet?
+### Meters or feet?
 
-Tap **m** or **ft** at the top of the Plan tab. The FAA preset shows its limit as 400 ft and the EASA preset as 120 m whichever units you use. Values in feet are rounded to 5 ft.
+Tap **m** or **ft** at the top of the Plan tab. The FAA preset shows its limit as 400 ft and the EASA preset as 120 m whichever units you use. Values in feet are rounded to 5 ft. The 2 km free area limit reads 1.2 mi in feet.
 
 ### Does it work offline?
 
@@ -99,7 +99,7 @@ The two example sites always do. For your own sites, checks run from terrain til
 
 ### I imported a KML or GPX file and the altitudes look off.
 
-KML altitudes are treated as metres above takeoff unless the file marks them as absolute. GPX elevations are above sea level by definition and are converted using the ground height at your takeoff. If a file's altitudes come from a drone app that uses a different convention, set the plan altitude by hand instead.
+KML altitudes are treated as meters above takeoff unless the file marks them as absolute. GPX elevations are above sea level by definition and are converted using the ground height at your takeoff. If a file's altitudes come from a drone app that uses a different convention, set the plan altitude by hand instead.
 
 ### What is the GNSS window?
 
@@ -115,7 +115,7 @@ Any. DroneMap does not connect to the drone; it plans around the altitude conven
 
 ### What is in Pro?
 
-Areas larger than 2 km across, KML, KMZ and GPX import, PDF and KML export, unlimited saved sites, the GNSS window, the Sun planner and offline site downloads. The four checks, the Profile, the example sites, PNG sharing and three saved sites are free. Pro is a monthly or yearly subscription, or a one-time lifetime purchase; prices are shown in the app in your currency.
+Areas larger than 2 km (1.2 mi) across, KML, KMZ and GPX import, PDF and KML export, unlimited saved sites, the GNSS window, the Sun planner and offline site downloads. The four checks, the Profile, the example sites, PNG sharing and three saved sites are free. Pro is a monthly or yearly subscription, or a one-time lifetime purchase; prices are shown in the app in your currency.
 
 ### How do I restore a purchase?
 

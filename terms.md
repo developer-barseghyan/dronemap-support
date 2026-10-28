@@ -56,9 +56,9 @@ The app is free to download. The four basic checks for areas up to 2 km across, 
 
 The price of each is shown in the app, in your currency, before you buy.
 
-**Subscriptions renew automatically.** Payment is charged to your Apple Account when you confirm the purchase. A subscription renews for the same period at the then-current price unless you cancel at least 24 hours before the end of the current period; the renewal is charged within the 24 hours before that period ends. You can manage or cancel a subscription at any time in **Settings → your name → Subscriptions** on your device. Cancelling stops the next renewal; Pro stays active until the end of the period already paid for. Deleting the app does not cancel a subscription.
+**Subscriptions renew automatically.** Payment is charged to your Apple Account when you confirm the purchase. A subscription renews for the same period at the then-current price unless you cancel at least 24 hours before the end of the current period; the renewal is charged within the 24 hours before that period ends. You can manage or cancel a subscription at any time in **Settings → your name → Subscriptions** on your device. Canceling stops the next renewal; Pro stays active until the end of the period already paid for. Deleting the app does not cancel a subscription.
 
-If a free trial is offered, it converts to a paid subscription at the end of the trial unless cancelled at least 24 hours before, and any unused part of the trial is forfeited when you buy a subscription.
+If a free trial is offered, it converts to a paid subscription at the end of the trial unless canceled at least 24 hours before, and any unused part of the trial is forfeited when you buy a subscription.
 
 Purchases are processed by Apple and are subject to Apple's terms. **Refunds are handled by Apple, not by the developer**; request one through Apple's refund process. Prices may change for future purchases and renewals; Apple will notify you where your consent is required.
 
@@ -70,7 +70,7 @@ Ending Pro returns the app to its free capabilities. **It never deletes the site
 
 The app depends on data and services the developer does not control: the AWS Open Data Terrain Tiles (Mapzen "joerd" merge of SRTM, GMTED2010, ETOPO1, USGS NED and other public elevation sources), public orbital elements from CelesTrak and the mirror tle.ivanstanojevic.me, and Apple Maps. Any of them may change, slow down, contain errors or stop. When that happens, parts of the app may show older data, mark cells as unknown or show nothing until the service returns. A subscription pays for the app's features, not for the availability or accuracy of those sources.
 
-Orbit propagation uses the open-source SatelliteKit library under the MIT licence; its notice is included in the app.
+Orbit propagation uses the open-source SatelliteKit library under the MIT license; its notice is included in the app.
 
 ## 7. Acceptable use
 
@@ -78,9 +78,9 @@ Do not present anything the app shows as an official, certified or authority-app
 
 Do not attempt to reverse engineer, decompile or redistribute the app, except where that restriction is unenforceable under applicable law.
 
-## 8. Licence
+## 8. License
 
-You are granted a personal, non-exclusive, non-transferable, revocable licence to use the app on Apple devices that you own or control, as permitted by these terms and by Apple's Media Services Terms and Conditions. The app, its design and its code belong to the developer. This licence ends automatically if you do not comply with these terms.
+You are granted a personal, non-exclusive, non-transferable, revocable license to use the app on Apple devices that you own or control, as permitted by these terms and by Apple's Media Services Terms and Conditions. The app, its design and its code belong to the developer. This license ends automatically if you do not comply with these terms.
 
 ## 9. No warranty
 
