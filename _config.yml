@@ -1,0 +1,5 @@
+title: DroneMap
+description: "Support, privacy policy and terms of use for DroneMap: Terrain & RTH Check, the terrain-safety preflight planner for drone pilots"
+baseurl: /dronemap-support
+exclude:
+  - README.md
