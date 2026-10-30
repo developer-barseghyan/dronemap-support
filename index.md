@@ -28,7 +28,7 @@ I usually reply within about two business days. If a result looks wrong, please 
 
 ## Getting started in a minute
 
-1. **Open an example.** The Sites tab has two ready-made sites. **Example: Castle Valley, Utah** shows what the app is for: an RTH of 50 m (165 ft) would fly the drone into the valley wall on the way home. **Example: Bonneville Salt Flats, Utah** is the opposite, clear on every check. Both work offline.
+1. **Open an example.** The Sites tab has two ready-made example sites. **Castle Valley, Utah** shows what the app is for: an RTH of 50 m (165 ft) would fly the drone into the valley wall on the way home. **Bonneville Salt Flats, Utah** is the opposite, clear on every check. Both work offline.
 2. **Make your own plan.** On the Plan tab, tap **Takeoff here** (or long-press the map), then tap the map to add the corners of your area, or choose **Circle**. The card at the bottom always says the next step.
 3. **Enter your numbers.** Your flight altitude and the RTH altitude set in your drone app, both above takeoff, as your controller shows them.
 4. **Tap Check.** The results open on the check that needs your attention most. Tap any row to see its layer on the map, and **Profile** for the side view.
@@ -95,19 +95,15 @@ Tap **m** or **ft** at the top of the Plan tab. The FAA preset shows its limit a
 
 ### Does it work offline?
 
-The two example sites always do. For your own sites, checks run from terrain tiles already cached on the phone. **Download for offline** (Pro) in the Sites tab fetches every tile a site needs, plus the orbital data for the GNSS window, and keeps them. iOS can clear caches when storage is low; the Sites list shows whether a site is still available offline.
+The two example sites always do. For your own sites, checks run from terrain tiles already cached on the phone. **Download for offline** (Pro) in the Sites tab fetches every terrain tile a site needs and keeps it. iOS can clear caches when storage is low; the Sites list shows whether a site is still available offline.
 
 ### I imported a KML or GPX file and the altitudes look off.
 
 KML altitudes are treated as meters above takeoff unless the file marks them as absolute. GPX elevations are above sea level by definition and are converted using the ground height at your takeoff. If a file's altitudes come from a drone app that uses a different convention, set the plan altitude by hand instead.
 
-### What is the GNSS window?
-
-A Pro feature for RTK and PPK mapping. It predicts, for your site and date, which navigation satellites are above the real terrain horizon around you and the resulting PDOP, in 5-minute steps, and lists the best two-hour windows. The sky plot shows satellites hidden behind the hills as hollow dots. Choose your receiver's constellations and elevation mask in the sheet. Orbital data are public two-line elements; the app refreshes them in the background and keeps a bundled set so the forecast works on first launch and offline. Times are shown in your phone's time zone and time format.
-
 ### What does the Sun feature do?
 
-Also Pro. It shows sun elevation through the day with the windows where the sun is between your chosen angles (useful for photogrammetry, which dislikes long shadows), and, for an inspection, warns when the sun will be in the camera's view of a facade.
+Also Pro. It shows sun elevation through the day with the windows where the sun is between your chosen angles (useful for photogrammetry, which dislikes long shadows), and, for an inspection, warns when the sun will be in the camera's view of a facade. Choose the date at the top of the Sun sheet (it is saved with the site); times are in the site's local time. The four terrain checks do not depend on the date.
 
 ### Which drones does it support?
 
@@ -115,18 +111,18 @@ Any. DroneMap does not connect to the drone; it plans around the altitude conven
 
 ### What is in Pro?
 
-Areas larger than 2 km (1.2 mi) across, KML, KMZ and GPX import, PDF and KML export, unlimited saved sites, the GNSS window, the Sun planner and offline site downloads. The four checks, the Profile, the example sites, PNG sharing and three saved sites are free. Pro is a monthly or yearly subscription, or a one-time lifetime purchase; prices are shown in the app in your currency.
+Areas larger than 2 km (1.2 mi) across, KML, KMZ and GPX import, PDF and KML export, unlimited saved sites, the Sun planner and offline site downloads. The four checks, the flight profile, the example sites, PNG sharing and three saved sites are free. Pro is a monthly or yearly subscription, or a one-time lifetime purchase; prices are shown in the app in your currency.
 
 ### How do I restore a purchase?
 
-**Settings → Restore purchases** (or **Restore** on the Pro screen), signed in with the Apple Account that made the purchase. Subscriptions are managed in your Apple Account settings, not in the app.
+**Settings → Bought Pro before?** (or the same link at the bottom of the DroneMap Pro screen), signed in with the Apple Account that made the purchase. Subscriptions are managed in your Apple Account settings, not in the app.
 
 ### I deleted the example sites. Can I get them back?
 
-Yes: **Settings → Restore example sites**.
+Yes: **Settings → Bring back the example sites**.
 
 ---
 
 ## Credits
 
-Terrain: Mapzen / AWS Open Data Terrain Tiles (SRTM, GMTED2010, ETOPO1, USGS NED and others). Orbital elements: CelesTrak. Orbit propagation: SatelliteKit (MIT). Maps: Apple Maps.
+Terrain: Mapzen / AWS Open Data Terrain Tiles (SRTM, GMTED2010, ETOPO1, USGS NED and others). Maps: Apple Maps.

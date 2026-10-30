@@ -8,7 +8,7 @@ permalink: /terms
 
 **DroneMap: Terrain & RTH Check**
 
-Effective date: 28 October 2026<br>
+Effective date: 30 October 2026<br>
 Developer: Tigran Barseghyan<br>
 Contact: **developer.barseghyan@gmail.com**
 
@@ -24,13 +24,13 @@ By downloading or using the app you agree to these terms. If you do not agree, p
 - The model describes bare ground. **Buildings, trees, masts, wires, cranes and other obstacles are not in it.** A <span class="tag ok">clear</span> result means the terrain model clears your plan by your margin and nothing more.
 - Return-to-Home, altitude and line-of-sight results assume that your drone behaves as the app models it (altitude measured above takeoff, RTH as a climb followed by a straight line home, radio at 2.4 or 5.8 GHz). Your drone, its settings and its firmware may behave differently.
 - The legal-altitude check applies a limit you choose (400 ft, 120 m or custom) to the terrain model. It is not legal advice and does not know the rules, exceptions, airspace or permissions that apply where you fly.
-- The GNSS window is computed from public orbital elements with a standard model and does not account for ionospheric conditions, interference, multipath or receiver quality. Sun windows are geometric and do not account for weather.
+- Sun windows are geometric and do not account for weather, haze or obstacles around the site.
 
 **Do not rely on the app as your only safeguard against collision, loss of signal, loss of the aircraft or a violation of aviation rules. Keep the drone in sight, keep your drone app's own safety features on, and follow the law of the place you fly in.** Do not use the app for manned aviation, emergencies, legal evidence, or any purpose where an error could cause damage, injury or loss.
 
 ## 2. What the app does
 
-It compares a planned flight (takeoff point, area or path, altitude above takeoff, RTH altitude, margin) with a terrain model and reports terrain clearance, a safe RTH altitude, the above-ground legality of the plan, and terrain line of sight from the operator's position. Pro features add a GNSS geometry forecast, sun windows, file import and export, offline terrain and unlimited sites.
+It compares a planned flight (takeoff point, area or path, altitude above takeoff, RTH altitude, margin) with a terrain model and reports terrain clearance, a safe RTH altitude, the above-ground legality of the plan, and terrain line of sight from the operator's position. Pro features add sun windows, file import and export, offline terrain and unlimited sites.
 
 The app does not connect to a drone, does not show weather, airspace restrictions or no-fly zones, and does not control or authorise any flight.
 
@@ -48,7 +48,7 @@ Files you export (PNG, PDF, KML) carry the app's disclaimer; keep it when you sh
 
 The app is free to download. The four basic checks for areas up to 2 km across, PNG sharing and three saved sites are free.
 
-**DroneMap Pro** unlocks larger areas, KML/KMZ/GPX import, PDF and KML export, unlimited sites, the GNSS window, the Sun planner and offline site downloads. It is offered as:
+**DroneMap Pro** unlocks larger areas, KML/KMZ/GPX import, PDF and KML export, unlimited sites, the Sun planner and offline site downloads. It is offered as:
 
 - a **monthly subscription**
 - an **annual subscription**
@@ -62,15 +62,13 @@ If a free trial is offered, it converts to a paid subscription at the end of the
 
 Purchases are processed by Apple and are subject to Apple's terms. **Refunds are handled by Apple, not by the developer**; request one through Apple's refund process. Prices may change for future purchases and renewals; Apple will notify you where your consent is required.
 
-Purchases can be restored on a new or reset device with **Restore Purchases** in Settings inside the app, using the same Apple Account.
+Purchases can be restored on a new or reset device with **Bought Pro before?** in Settings inside the app, using the same Apple Account.
 
 Ending Pro returns the app to its free capabilities. **It never deletes the sites you saved.**
 
 ## 6. Third-party data and services
 
-The app depends on data and services the developer does not control: the AWS Open Data Terrain Tiles (Mapzen "joerd" merge of SRTM, GMTED2010, ETOPO1, USGS NED and other public elevation sources), public orbital elements from CelesTrak and the mirror tle.ivanstanojevic.me, and Apple Maps. Any of them may change, slow down, contain errors or stop. When that happens, parts of the app may show older data, mark cells as unknown or show nothing until the service returns. A subscription pays for the app's features, not for the availability or accuracy of those sources.
-
-Orbit propagation uses the open-source SatelliteKit library under the MIT license; its notice is included in the app.
+The app depends on data and services the developer does not control: the AWS Open Data Terrain Tiles (Mapzen "joerd" merge of SRTM, GMTED2010, ETOPO1, USGS NED and other public elevation sources) and Apple Maps. Any of them may change, slow down, contain errors or stop. When that happens, parts of the app may show older data, mark cells as unknown or show nothing until the service returns. A subscription pays for the app's features, not for the availability or accuracy of those sources.
 
 ## 7. Acceptable use
 
