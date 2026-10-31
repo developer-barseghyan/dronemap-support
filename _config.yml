@@ -1,5 +1,7 @@
-title: DroneMap
-description: "Support, privacy policy and terms of use for DroneMap: Terrain & RTH Check, the terrain-safety preflight planner for drone pilots"
-baseurl: /dronemap-support
-exclude:
-  - README.md
+# DroneMap help site (GitHub Pages, Jekyll)
+url: "https://developer-barseghyan.github.io"
+baseurl: "/dronemap-support"
+title: "DroneMap"
+description: "Help pages, privacy policy and EULA for DroneMap: Terrain & RTH Check, a preflight terrain planner for drone pilots on iPhone."
+markdown: kramdown
+exclude: [README.md]

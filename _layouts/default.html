@@ -1,144 +1,101 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US" class="dm-root">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.title | default: site.title }}</title>
-<meta name="description" content="{{ site.description | escape }}">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#e9edf2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#18212b" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.png">
-<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.summary | default: site.description | escape }}">
+<meta name="color-scheme" content="dark only">
+<meta name="theme-color" content="#0E141B">
+<link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
 <style>
-/* Colours are the app's own: slate surfaces, safety amber, red/amber/green terrain coding. */
+/* DroneMap preflight palette: night slate ground, amber warning ink. */
 :root{
-  --bg:#f2f4f7;
-  --bg-top:#e9edf2;
-  --surface:#ffffff;
-  --surface2:#e6eaef;
-  --text:#0f1720;
-  --text2:#4a5867;
-  --text3:#66748a;
-  --divider:#e1e6ec;
-  --accent:#b86f00;
-  --on-accent:#1a1300;
-  --accent-fill:rgba(255,176,32,.12);
-  --accent-border:rgba(255,176,32,.40);
-  --danger:#c62f22;
-  --caution:#9a6400;
-  --ok:#1b7a48;
-  --neutral:#4a5867;
-  --chip:rgba(255,255,255,.75);
-  --shadow:0 1px 2px rgba(15,23,32,.05), 0 10px 30px rgba(15,23,32,.08);
+  --dm-ground:#0E141B;
+  --dm-ground-raised:#151D26;
+  --dm-ridge:#233040;
+  --dm-ink:#FFFFFF;
+  --dm-ink-soft:#A3B1C0;
+  --dm-ink-faint:#7C8B9B;
+  --dm-amber:#FFB020;
+  --dm-amber-dim:rgba(255,176,32,.14);
+  --dm-measure:44rem;
+  --dm-gutter:clamp(16px,4vw,32px);
+  --dm-face:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+  --dm-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0e141b;
-    --bg-top:#18212b;
-    --surface:#18212b;
-    --surface2:#26313d;
-    --text:#eef2f6;
-    --text2:#a3b1c0;
-    --text3:#8593a3;
-    --divider:#2b3744;
-    --accent:#ffb020;
-    --on-accent:#1a1300;
-    --accent-fill:rgba(255,176,32,.12);
-    --accent-border:rgba(255,176,32,.36);
-    --danger:#ff4d3d;
-    --caution:#ffb020;
-    --ok:#2fd27a;
-    --neutral:#a3b1c0;
-    --chip:rgba(255,255,255,.06);
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.28);
-  }
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  min-height:100vh;
-  color:var(--text);
-  background-color:var(--bg);
-  background-image:linear-gradient(180deg, var(--bg-top) 0, var(--bg) 420px);
-  background-repeat:no-repeat;
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-.wrap{max-width:46rem;margin:0 auto;padding:0 18px}
-header.bar{padding:34px 0 22px;text-align:center}
-header.bar .icon{display:block;width:76px;height:76px;margin:0 auto 14px;border-radius:22.5%;box-shadow:0 6px 18px rgba(0,0,0,.28)}
-header.bar .app,h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-header.bar .app{margin:0;font-size:1.4rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-header.bar .sub{margin:4px 0 0;color:var(--text3);font-size:.9rem;letter-spacing:.02em}
-nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
-nav a{display:inline-block;padding:7px 17px;border-radius:8px;background:var(--chip);color:var(--text2);text-decoration:none;font-size:.86rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .15s, background .15s}
-nav a:hover{color:var(--accent)}
-nav a.here,nav a.here:hover{background:var(--accent);color:var(--on-accent);box-shadow:0 4px 10px rgba(0,0,0,.12)}
-main.card{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:38px 34px 34px;margin-bottom:26px}
-main.card > :first-child{margin-top:0}
-h1{font-size:1.85rem;line-height:1.25;letter-spacing:-0.02em;margin:0 0 .65em;font-weight:800}
-h2{font-size:1.2rem;margin:2.1em 0 .5em;letter-spacing:.02em;font-weight:750;text-transform:uppercase}
-h3{font-size:1.04rem;margin:1.9em 0 .4em;font-weight:650}
-p,li{overflow-wrap:break-word}
-main.card p,main.card li{color:var(--text2)}
-main.card strong{color:var(--text)}
-li{margin:.3em 0}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
-strong{font-weight:650}
-hr{border:0;border-top:1px solid var(--divider);margin:2.3em 0}
-code{background:var(--surface2);color:var(--text);padding:.1em .4em;border-radius:6px;font-size:.92em}
-blockquote{margin:1.4em 0;padding:.85em 1.1em;border:1px solid var(--accent-border);border-radius:10px;background:var(--accent-fill)}
-blockquote p{margin:.35em 0}
-main.card blockquote p{color:var(--text)}
-/* Verdict colours, as the app shows them */
-.tag{display:inline-block;padding:.08em .55em;border-radius:6px;font-size:.74em;font-weight:800;letter-spacing:.06em;white-space:nowrap;vertical-align:.08em;border:1px solid;text-transform:uppercase}
-.tag.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent);border-color:color-mix(in srgb,var(--ok) 32%,transparent)}
-.tag.caution{color:var(--caution);background:color-mix(in srgb,var(--caution) 12%,transparent);border-color:color-mix(in srgb,var(--caution) 36%,transparent)}
-.tag.danger{color:var(--danger);background:color-mix(in srgb,var(--danger) 12%,transparent);border-color:color-mix(in srgb,var(--danger) 32%,transparent)}
-.table-scroll{overflow-x:auto}
-table{border-collapse:separate;border-spacing:0;width:100%;margin:1.3em 0;font-size:.94rem}
-th,td{border-bottom:1px solid var(--divider);padding:9px 12px;text-align:left;vertical-align:top;color:var(--text2)}
-thead th{color:var(--text3);font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
-tbody td:first-child{color:var(--text);font-weight:600}
-tbody tr:last-child td{border-bottom:0}
-footer{padding:4px 0 54px;color:var(--text3);font-size:.86rem;text-align:center}
-footer a{color:var(--text3);text-decoration:none}
-footer a:hover{color:var(--accent);text-decoration:underline}
-footer p{margin:.3em 0}
-@media (max-width:560px){
-  .wrap{padding:0 14px}
-  header.bar{padding:24px 0 16px}
-  header.bar .icon{width:64px;height:64px}
-  main.card{padding:26px 20px 24px;border-radius:12px}
-  h1{font-size:1.55rem}
-  h2{font-size:1.1rem}
-  nav a{padding:6px 14px;font-size:.82rem}
-  table{font-size:.88rem}
-  th,td{padding:8px 8px}
+html.dm-root{background:var(--dm-ground);-webkit-text-size-adjust:100%;}
+body.dm-body{margin:0;background:var(--dm-ground);color:var(--dm-ink-soft);font-family:var(--dm-face);font-size:17px;line-height:1.6}
+.dm-body *,.dm-body *::before,.dm-body *::after{box-sizing:border-box}
+
+.dm-strip{border-bottom:1px solid var(--dm-ridge);background:var(--dm-ground-raised)}
+.dm-strip-inner{max-width:var(--dm-measure);margin-inline:auto;padding:14px var(--dm-gutter);display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
+.dm-brand{display:flex;align-items:center;gap:10px;color:var(--dm-ink);text-decoration:none}
+.dm-brand-mark{width:36px;height:36px;border-radius:9px}
+.dm-brand-text{display:flex;flex-direction:column;line-height:1.2}
+.dm-brand-name{font-weight:700;font-size:1.05rem}
+.dm-brand-line{font-family:var(--dm-mono);font-size:.72rem;color:var(--dm-amber);letter-spacing:.03em}
+
+.dm-menu{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.dm-menu-link{display:block;padding:6px 10px;color:var(--dm-ink-soft);text-decoration:none;font-size:.9rem;border-bottom:2px solid transparent}
+.dm-menu-link:hover{color:var(--dm-ink)}
+.dm-menu-link[aria-current="page"]{color:var(--dm-ink);border-bottom-color:var(--dm-amber)}
+
+.dm-page{max-width:var(--dm-measure);margin-inline:auto;padding:28px var(--dm-gutter) 40px}
+.dm-page h1{color:var(--dm-ink);font-size:clamp(1.6rem,5vw,2.1rem);line-height:1.2;margin:0 0 .5em}
+.dm-page h2{color:var(--dm-ink);font-size:1.2rem;margin:2.2em 0 .5em;padding-top:.9em;border-top:1px solid var(--dm-ridge)}
+.dm-page h3{color:var(--dm-amber);font-size:1rem;margin:1.6em 0 .3em}
+.dm-page strong{color:var(--dm-ink)}
+.dm-page a{color:var(--dm-amber);text-underline-offset:3px}
+.dm-page p,.dm-page li{overflow-wrap:anywhere}
+.dm-page ul,.dm-page ol{padding-left:1.3em}
+.dm-page li+li{margin-top:.35em}
+.dm-page blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--dm-amber);background:var(--dm-amber-dim)}
+.dm-page blockquote p{margin:.3em 0;color:var(--dm-ink)}
+.dm-page code{font-family:var(--dm-mono);font-size:.88em;color:var(--dm-ink)}
+.dm-page table{display:block;overflow-x:auto;border-collapse:collapse;margin:1.2em 0;font-size:.92rem}
+.dm-page th,.dm-page td{padding:8px 10px;border:1px solid var(--dm-ridge);text-align:left;vertical-align:top}
+.dm-page th{color:var(--dm-ink);background:var(--dm-ground-raised)}
+.dm-page dt{color:var(--dm-ink);font-weight:700;margin-top:1em}
+.dm-page dd{margin:.2em 0 0 0}
+
+.dm-base{border-top:1px solid var(--dm-ridge)}
+.dm-base-inner{max-width:var(--dm-measure);margin-inline:auto;padding:18px var(--dm-gutter) 36px;font-size:.84rem;color:var(--dm-ink-faint)}
+.dm-base-inner a{color:var(--dm-ink-soft)}
+.dm-base-row{margin:.25em 0}
+
+@media (max-width:480px){
+  body.dm-body{font-size:16px}
+  .dm-strip-inner{padding-block:10px}
+  .dm-menu-link{padding:6px 8px}
 }
 </style>
 </head>
-<body>
-<div class="wrap">
-  <header class="bar">
-    <img class="icon" src="{{ site.baseurl }}/assets/icon.png" width="76" height="76" alt="DroneMap app icon">
-    <p class="app">DroneMap</p>
-    <p class="sub">Terrain &amp; RTH Check</p>
-    <nav>
-      <a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="here"{% endif %}>Support</a>
-      <a href="{{ site.baseurl }}/privacy"{% if page.url contains "privacy" %} class="here"{% endif %}>Privacy</a>
-      <a href="{{ site.baseurl }}/terms"{% if page.url contains "terms" %} class="here"{% endif %}>Terms</a>
+<body class="dm-body">
+<div class="dm-strip">
+  <div class="dm-strip-inner">
+    <a class="dm-brand" href="{{ '/' | relative_url }}">
+      <img class="dm-brand-mark" src="{{ '/assets/icon.png' | relative_url }}" width="36" height="36" alt="">
+      <span class="dm-brand-text"><span class="dm-brand-name">DroneMap</span><span class="dm-brand-line">terrain &amp; RTH preflight</span></span>
+    </a>
+    <nav aria-label="Site pages">
+      <ul class="dm-menu">
+        <li><a class="dm-menu-link" href="{{ '/' | relative_url }}"{% if page.dm_section == "help" %} aria-current="page"{% endif %}>Help</a></li>
+        <li><a class="dm-menu-link" href="{{ '/privacy' | relative_url }}"{% if page.dm_section == "privacy" %} aria-current="page"{% endif %}>Privacy</a></li>
+        <li><a class="dm-menu-link" href="{{ '/terms' | relative_url }}"{% if page.dm_section == "terms" %} aria-current="page"{% endif %}>Terms (EULA)</a></li>
+      </ul>
     </nav>
-  </header>
-  <main class="card">
+  </div>
+</div>
+<article class="dm-page">
 {{ content }}
-  </main>
-  <footer>
-    <p><a href="mailto:developer.barseghyan@gmail.com">developer.barseghyan@gmail.com</a></p>
-    <p>Terrain: Mapzen / AWS Open Data Terrain Tiles (SRTM, GMTED, ETOPO1, NED and others). Maps: Apple Maps.</p>
-    <p>&copy; {{ site.time | date: "%Y" }} Tigran Barseghyan</p>
-  </footer>
+</article>
+<div class="dm-base">
+  <div class="dm-base-inner">
+    <p class="dm-base-row">DroneMap for iPhone is built and maintained by Tigran Barseghyan. Write to <a href="mailto:developer.barseghyan@gmail.com">developer.barseghyan@gmail.com</a>.</p>
+    <p class="dm-base-row">Ground heights come from AWS Open Data Terrain Tiles. Base map by Apple Maps.</p>
+  </div>
 </div>
 </body>
 </html>
